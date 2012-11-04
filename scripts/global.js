@@ -44,10 +44,10 @@
 			for(i in objPath) {
 				var o = obj[objPath[i]];
 
-				if (o == 'undefined'){
+				/*if (o == undefined){
 					obj[objPath[i]] = {};
 					o = obj[objPath[i]];
-				}
+				}*/
 				//if (i != objPath.length-1){
 					obj = o;
 				//}
@@ -76,14 +76,13 @@
 		for(i in objPath) {
 			var o = obj[objPath[i]];
 
-			if (o == 'undefined'){
+			if (o == undefined){
 				obj[objPath[i]] = {};
 				o = obj[objPath[i]];
 			}
 			if (i != objPath.length-1){
 				obj = o;
 			}
-			console.log(o, obj, objPath[i]);
 		}
 
 		obj[objPath[i]] = $this.val();
