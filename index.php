@@ -71,9 +71,7 @@ define('GRID_SIZE', 10);
                   <button>+</button>
                 </form>
                 <h1>Players</h1>
-                <ol id="player-list">
-                  
-                </ol>
+                <ol id="player-list"></ol>
               </section>
             </td><!-- /#players -->
           </tr>

@@ -7,7 +7,12 @@
       var $nameList = $('#player-list');
       var index = $nameList.children().length;
 
-      $nameList.append('<li><label><input type="radio" name="player" value="' + index + '" />' + $name.val() + '</label></li>');
+      playerHTML  = '<li id="player-index-' + index + '">';
+      playerHTML += '  <label><input type="radio" name="player" value="' + index + '" />' + $name.val() + '</label>';
+      playerHTML += '  <a href="javascript:;" class="remove-player">remove</a>';
+      playerHTML += '</li>';
+
+      $nameList.append(playerHTML);
       $name.val('');
       evt.preventDefault();
     });

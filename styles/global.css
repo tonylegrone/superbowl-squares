@@ -87,15 +87,15 @@ input[type=text] {
 
 #score-table th {
   padding: 4px;
-  width: 1.9em;
-  height: 1.9em;
+  width: 2em;
+  height: 2em;
 }
 
 #score-table td {
   margin: 0;
   padding: 4px;
-  width: 1.9em;
-  height: 1.9em;
+  width: 2em;
+  height: 2em;
   border: 1px #aaa solid;
   text-align: center;
 }
@@ -112,8 +112,26 @@ input[type=text] {
   display: none;
 }
 
+#player-list > li {
+  position: relative;
+}
+
 #player-list .selected {
   font-weight: bold;
+}
+
+#player-list .remove-player {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: red;
+  text-align: center;
+  text-decoration: none;
+}
+
+#player-list > li:hover .remove-player {
+  display: block;
 }
 
 #quarters {
