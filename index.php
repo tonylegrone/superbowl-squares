@@ -1,6 +1,6 @@
 <?php
 
-define(GRID_SIZE, 10);
+define('GRID_SIZE', 10);
 
 ?>
 <!DOCTYPE html>
