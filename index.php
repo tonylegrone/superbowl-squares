@@ -82,48 +82,55 @@ define('GRID_SIZE', 10);
     </section></div><!-- /#page-wrapper -->
 
     <footer>
-      <div id="quarters">
-        <aside id="q1">
-          <h2>Score: Q1</h2>
-          <div class="status"></div>
-          <div class="score">
-            <form action="javascript:;" id="q1-score">
-              <input maxlength="2" class="team-home" type="text" id="team-home-0" name="team-home-0" /> &mdash; 
-              <input maxlength="2" class="team-away" type="text" id="team-away-0" name="team-away-0" />
-            </form>
-          </div>
-        </aside>
-        <aside id="q2">
-          <h2>Score: Q2</h2>
-          <div class="status"></div>
-          <div class="score">
-            <form action="javascript:;" id="q2-score">
-              <input maxlength="2" class="team-home" type="text" id="team-home-1" name="team-home-1" /> &mdash; 
-              <input maxlength="2" class="team-away" type="text" id="team-away-1" name="team-away-1" />
-            </form>
-          </div>
-        </aside>
-        <aside id="q3">
-          <h2>Score: Q3</h2>
-          <div class="status"></div>
-          <div class="score">
-            <form action="javascript:;" id="q3-score">
-              <input maxlength="2" class="team-home" type="text" id="team-home-2" name="team-home-2" /> &mdash; 
-              <input maxlength="2" class="team-away" type="text" id="team-away-2" name="team-away-2" />
-            </form>
-          </div>
-        </aside>
-        <aside id="q4">
-          <h2>Score: Q4</h2>
-          <div class="status"></div>
-          <div class="score">
-            <form action="javascript:;" id="q4-score">
-              <input maxlength="2" class="team-home" type="text" id="team-home-3" name="team-home-3" /> &mdash; 
-              <input maxlength="2" class="team-away" type="text" id="team-away-3" name="team-away-3" />
-            </form>
-          </div>
-        </aside>
-      </div><!-- /#quarters -->
+      <table id="quarters">
+        <tbody>
+          <tr>
+            <td id="q1" class="quarter">
+              <h2>Score: Q1</h2>
+              <div class="status"></div>
+              <div class="score">
+                <form action="javascript:;" id="q1-score">
+                  <input maxlength="2" class="team-home" type="text" id="team-home-0" name="team-home-0" /> &mdash; 
+                  <input maxlength="2" class="team-away" type="text" id="team-away-0" name="team-away-0" />
+                </form>
+              </div>
+            </td>
+            <td class="spacer"></td>
+            <td id="q2" class="quarter">
+              <h2>Score: Q2</h2>
+              <div class="status"></div>
+              <div class="score">
+                <form action="javascript:;" id="q2-score">
+                  <input maxlength="2" class="team-home" type="text" id="team-home-1" name="team-home-1" /> &mdash; 
+                  <input maxlength="2" class="team-away" type="text" id="team-away-1" name="team-away-1" />
+                </form>
+              </div>
+            </td>
+            <td class="spacer"></td>
+            <td id="q3" class="quarter">
+              <h2>Score: Q3</h2>
+              <div class="status"></div>
+              <div class="score">
+                <form action="javascript:;" id="q3-score">
+                  <input maxlength="2" class="team-home" type="text" id="team-home-2" name="team-home-2" /> &mdash; 
+                  <input maxlength="2" class="team-away" type="text" id="team-away-2" name="team-away-2" />
+                </form>
+              </div>
+            </td>
+            <td class="spacer"></td>
+            <td id="q4" class="quarter">
+              <h2>Score: Q4</h2>
+              <div class="status"></div>
+              <div class="score">
+                <form action="javascript:;" id="q4-score">
+                  <input maxlength="2" class="team-home" type="text" id="team-home-3" name="team-home-3" /> &mdash; 
+                  <input maxlength="2" class="team-away" type="text" id="team-away-3" name="team-away-3" />
+                </form>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table><!-- /#quarters -->
     </footer>
 
   </div><!-- /#main-wrapper -->
