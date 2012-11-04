@@ -29,9 +29,9 @@ define('GRID_SIZE', 10);
     <header>
       <h1>Superbowl Squares</h1>
       <form id="teams" action="javascript:;">
-        <input class="team-home" type="text" name="team-home-name" placeholder="Home team" />
+        <input class="team-home" type="text" name="team-home-name" placeholder="Home team" data-obj-path="game.teams.0" />
         VS
-        <input class="team-away" type="text" name="team-away-name" placeholder="Away team" />
+        <input class="team-away" type="text" name="team-away-name" placeholder="Away team" data-obj-path="game.teams.1"/>
       </form>
     </header>
 
@@ -88,8 +88,8 @@ define('GRID_SIZE', 10);
               <div class="status"></div>
               <div class="score">
                 <form action="javascript:;" id="q1-score">
-                  <input maxlength="2" class="team-home" type="text" id="team-home-0" name="team-home-0" /> &mdash; 
-                  <input maxlength="2" class="team-away" type="text" id="team-away-0" name="team-away-0" />
+                  <input maxlength="2" class="team-home" type="text" id="team-home-0" name="team-home-0" data-obj-path="game.scores.0.0" /> &mdash;
+                  <input maxlength="2" class="team-away" type="text" id="team-away-0" name="team-away-0" data-obj-path="game.scores.0.1" />
                 </form>
               </div>
             </td>
@@ -99,8 +99,8 @@ define('GRID_SIZE', 10);
               <div class="status"></div>
               <div class="score">
                 <form action="javascript:;" id="q2-score">
-                  <input maxlength="2" class="team-home" type="text" id="team-home-1" name="team-home-1" /> &mdash; 
-                  <input maxlength="2" class="team-away" type="text" id="team-away-1" name="team-away-1" />
+                  <input maxlength="2" class="team-home" type="text" id="team-home-1" name="team-home-1" data-obj-path="game.scores.1.0" /> &mdash;
+                  <input maxlength="2" class="team-away" type="text" id="team-away-1" name="team-away-1" data-obj-path="game.scores.1.1" />
                 </form>
               </div>
             </td>
@@ -110,8 +110,8 @@ define('GRID_SIZE', 10);
               <div class="status"></div>
               <div class="score">
                 <form action="javascript:;" id="q3-score">
-                  <input maxlength="2" class="team-home" type="text" id="team-home-2" name="team-home-2" /> &mdash; 
-                  <input maxlength="2" class="team-away" type="text" id="team-away-2" name="team-away-2" />
+                  <input maxlength="2" class="team-home" type="text" id="team-home-2" name="team-home-2" data-obj-path="game.scores.2.0" /> &mdash;
+                  <input maxlength="2" class="team-away" type="text" id="team-away-2" name="team-away-2" data-obj-path="game.scores.2.1" />
                 </form>
               </div>
             </td>
@@ -121,8 +121,8 @@ define('GRID_SIZE', 10);
               <div class="status"></div>
               <div class="score">
                 <form action="javascript:;" id="q4-score">
-                  <input maxlength="2" class="team-home" type="text" id="team-home-3" name="team-home-3" /> &mdash; 
-                  <input maxlength="2" class="team-away" type="text" id="team-away-3" name="team-away-3" />
+                  <input maxlength="2" class="team-home" type="text" id="team-home-3" name="team-home-3" data-obj-path="game.scores.3.0" /> &mdash;
+                  <input maxlength="2" class="team-away" type="text" id="team-away-3" name="team-away-3" data-obj-path="game.scores.3.1" />
                 </form>
               </div>
             </td>
