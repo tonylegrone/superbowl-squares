@@ -29,6 +29,17 @@ header > h1 {
   text-align: center;
 }
 
+input[type=text] {
+  padding: 4px;
+  border: 1px #aaa solid;
+  border-radius: 4px;
+  box-shadow: 0 0 3px #fff;
+}
+
+#teams input {
+  border: none;
+}
+
 #content {
   width: 100%;
 }
@@ -62,6 +73,14 @@ header > h1 {
   width: 100%;
 }
 
+#score-table th.team-home {
+  color: #55f;
+}
+
+#score-table th.team-away {
+  color: #f55;
+}
+
 #score-table th {
   padding: 4px;
   width: 1.9em;
@@ -85,6 +104,14 @@ header > h1 {
   padding: 0 0 0 20px;
 }
 
+#player-list input[type=radio] {
+  display: none;
+}
+
+#player-list .selected {
+  font-weight: bold;
+}
+
 #quarters > aside {
   margin: 2%;
   padding: 20px;
@@ -93,6 +120,7 @@ header > h1 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; 
   float: left;
+  text-align: center;
 }
 
 #quarters > aside:first-child {
@@ -104,9 +132,21 @@ header > h1 {
 }
 
 #quarters input {
-  width: 15px;
+  padding: 4px 2px;
+  width: 25px;
+  border: none;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 #add-player {
   margin: 0 0 15px;
+}
+
+input.team-home {
+  background: #bbf;
+}
+
+input.team-away {
+  background: #fbb;
 }

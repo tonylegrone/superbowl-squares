@@ -27,10 +27,11 @@ define('GRID_SIZE', 10);
   <div id="main-wrapper">
 
     <header>
-      <h1>Superbow Squares</h1>
+      <h1>Superbowl Squares</h1>
       <form id="teams" action="javascript:;">
-        <input type="text" name="team-1-name" placeholder="Team name 1" />
-        <input type="text" name="team-2-name" placeholder="Team name 2" />
+        <input class="team-home" type="text" name="team-home-name" placeholder="Home team" />
+        VS
+        <input class="team-away" type="text" name="team-away-name" placeholder="Away team" />
       </form>
     </header>
 
@@ -40,9 +41,9 @@ define('GRID_SIZE', 10);
           for ($i = 1; $i <= GRID_SIZE; $i++) {
             $td = array();
             for ($ii = 1; $ii <= GRID_SIZE; $ii++) {
-              $td[] = '<td class="col-' . $ii . '"></td>';
+              $td[] = "<td class='grid-$i-$ii'></td>";
             }
-            $tr[] = "<tr class='row-$i'>\n\t<th></th>\n\t" . implode("\n\t", $td) . '</tr>';
+            $tr[] = "<tr class='row-$i'>\n\t<th class='team-away'></th>\n\t" . implode("\n\t", $td) . '</tr>';
           }
         ?>
       <table id="content">
@@ -53,7 +54,7 @@ define('GRID_SIZE', 10);
                 <table id="score-table">
                   <thead>
                     <tr>
-                      <?php echo str_repeat('<th></th>', (GRID_SIZE + 1)); ?>
+                      <?php echo str_repeat('<th class="team-home"></th>', (GRID_SIZE + 1)); ?>
                     </tr>
                   </thead>
                   <tbody>
@@ -70,8 +71,8 @@ define('GRID_SIZE', 10);
                   <button>+</button>
                 </form>
                 <h1>Players</h1>
-                <ol>
-                  <li>Tony Legrone</li>
+                <ol id="player-list">
+                  
                 </ol>
               </section>
             </td><!-- /#players -->
@@ -83,50 +84,42 @@ define('GRID_SIZE', 10);
     <footer>
       <div id="quarters">
         <aside id="q1">
-          <h2>Quarter 1</h2>
+          <h2>Score: Q1</h2>
           <div class="status"></div>
           <div class="score">
             <form action="javascript:;" id="q1-score">
-              <label for="team-1-0">Team 1</label>
-              <input type="text" id="team-1-0`" name="team-1-0" />
-              <label for="team-2-0">Team 2</label>
-              <input type="text" id="team-2-0" name="team-2-0" />
+              <input maxlength="2" class="team-home" type="text" id="team-home-0" name="team-home-0" /> &mdash; 
+              <input maxlength="2" class="team-away" type="text" id="team-away-0" name="team-away-0" />
             </form>
           </div>
         </aside>
         <aside id="q2">
-          <h2>Quarter 2</h2>
+          <h2>Score: Q2</h2>
           <div class="status"></div>
           <div class="score">
             <form action="javascript:;" id="q2-score">
-              <label for="team-1-1">Team 1</label>
-              <input type="text" id="team-1-1" name="team-1-1" />
-              <label for="team-2-1">Team 2</label>
-              <input type="text" id="team-2-1" name="team-2-1" />
+              <input maxlength="2" class="team-home" type="text" id="team-home-1" name="team-home-1" /> &mdash; 
+              <input maxlength="2" class="team-away" type="text" id="team-away-1" name="team-away-1" />
             </form>
           </div>
         </aside>
         <aside id="q3">
-          <h2>Quarter 3</h2>
+          <h2>Score: Q3</h2>
           <div class="status"></div>
           <div class="score">
             <form action="javascript:;" id="q3-score">
-              <label for="team-1-2">Team 1</label>
-              <input type="text" id="team-1-2" name="team-1-2" />
-              <label for="team-2-2">Team 2</label>
-              <input type="text" id="team-2-2" name="team-2-2" />
+              <input maxlength="2" class="team-home" type="text" id="team-home-2" name="team-home-2" /> &mdash; 
+              <input maxlength="2" class="team-away" type="text" id="team-away-2" name="team-away-2" />
             </form>
           </div>
         </aside>
         <aside id="q4">
-          <h2>Quarter 4</h2>
+          <h2>Score: Q4</h2>
           <div class="status"></div>
           <div class="score">
             <form action="javascript:;" id="q4-score">
-              <label for="team-1-3">Team 1</label>
-              <input type="text" id="team-1-3" name="team-1-3" />
-              <label for="team-2-3">Team 2</label>
-              <input type="text" id="team-2-3" name="team-2-3" />
+              <input maxlength="2" class="team-home" type="text" id="team-home-3" name="team-home-3" /> &mdash; 
+              <input maxlength="2" class="team-away" type="text" id="team-away-3" name="team-away-3" />
             </form>
           </div>
         </aside>
