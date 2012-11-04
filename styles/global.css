@@ -1,0 +1,112 @@
+
+body {
+  margin: 0;
+  padding: 20px;
+  min-width: 940px;
+  background: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+header {
+  margin: 0 0 20px;
+}
+
+h1 {
+  margin: 0 0 10px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 1em;
+}
+
+header > h1 {
+  text-align: center;
+}
+
+#content {
+  width: 100%;
+}
+
+#content td {
+  vertical-align: top;
+}
+
+#content td.spacer {
+  width: 20px;
+}
+
+#quarters > aside,
+#players-wrapper,
+#score-table-wrapper {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px #aaa;
+  vertical-align: top;
+}
+
+#players-wrapper,
+#score-table-wrapper {
+  padding: 20px;
+}
+
+#score-table-wrapper {
+}
+
+#score-table {
+  width: 100%;
+}
+
+#score-table th {
+  padding: 4px;
+  width: 1.9em;
+  height: 1.9em;
+}
+
+#score-table td {
+  margin: 0;
+  padding: 4px;
+  width: 1.9em;
+  height: 1.9em;
+  border: 1px #aaa solid;
+  text-align: center;
+}
+
+#players-wrapper {
+  width: 300px;
+}
+
+#players-wrapper ol {
+  padding: 0 0 0 20px;
+}
+
+#quarters > aside {
+  margin: 2%;
+  padding: 20px;
+  width: 22%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+  float: left;
+}
+
+#quarters > aside:first-child {
+  margin-left: 0;
+}
+
+#quarters > aside:last-child {
+  margin-right: 0;
+}
+
+#quarters input {
+  width: 15px;
+}
+
+#add-player {
+  margin: 0 0 15px;
+}
