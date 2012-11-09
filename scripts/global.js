@@ -9,6 +9,7 @@
       gameWrapper.game.playerIndex = uid;
 
       playerHTML  = '<li id="player-uid-' + uid + '">';
+      playerHTML += '  <span class="uid">' + uid + '.</span>';
       playerHTML += '  <label><input type="radio" name="player" value="' + uid + '" />' + $name.val() + '</label>';
       playerHTML += '  <span class="squares-used">0</span>';
       playerHTML += '  <a href="javascript:;" class="remove-player">remove</a>';
@@ -17,8 +18,9 @@
       $nameList.append(playerHTML);
 
       gameWrapper.game.players[uid] = {
-        'uid':uid,
-        'name':$name.val()
+        'uid' : uid,
+        'name' : $name.val(),
+        'squaresUsed' : 0
       };
       saveGames();
 
@@ -29,13 +31,34 @@
     $('#player-list').on('change', 'input', function(){
       $(this).parent().addClass('selected');
       $('#player-list input:not(:checked)').parent().removeClass('selected');
+      $('td.cell').each(function(){
+        var $this = $(this);
+        var player = $('#player-list input:checked').val();
+        if ($this.text() == player) {
+          $this.addClass('highlight');
+        }
+        else {
+          $this.removeClass('highlight');
+        }
+      });
     });
 
     $('td.cell').click(function(){
-      $this = $(this);
-      player = $('#player-list input:checked').val();
+      var $this = $(this);
+      var player = $('#player-list input:checked').val();
 
-      $this.text(player);
+      if (player == undefined) return false;
+
+      if ($this.text() == player) {
+        $this.text('').removeClass('highlight');
+      }
+      else {
+        $this.text(player).addClass('highlight');
+      }
+
+      var squaresUsed = $('td.cell:contains(' + player + ')').length;
+      $('#player-uid-' + player + ' .squares-used').text(squaresUsed);
+      gameWrapper.game.players[player].squaresUsed = squaresUsed;
 
       var objPath = $this.attr('data-obj-path').split('.');
 
@@ -132,9 +155,10 @@
         var o = obj[i];
         // obj = o;
 
-        playerHTML += '<li id="player-index-' + o.uid + '">';
+        playerHTML += '<li id="player-uid-' + o.uid + '">';
+        playerHTML += '  <span class="uid">' + o.uid + '.</span>';
         playerHTML += '  <label><input type="radio" name="player" value="' + o.uid + '" />' + o.name + '</label>';
-        playerHTML += '  <span class="squares-used">0</span>';
+        playerHTML += '  <span class="squares-used">' + o.squaresUsed + '</span>';
         playerHTML += '  <a href="javascript:;" class="remove-player">remove</a>';
         playerHTML += '</li>';
       }
