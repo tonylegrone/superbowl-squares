@@ -15,7 +15,7 @@ define('GRID_SIZE', 10);
   <title>Superbowl Squares</title>
 
   <link rel="shortcut icon" href="/favicon.png" type="image/vnd.microsoft.icon" />
-  <link rel="stylesheet" href="/libraries/jquery-ui-1.9.1/css/ui-lightness/jquery-ui-1.9.1.custom.css" />
+  <link rel="stylesheet" href="/libraries/jquery-ui-1.9.1/css/smoothness/jquery-ui-1.9.1.custom.css" />
   <link rel="stylesheet" href="/styles/global.css" type="text/css" />
  
   <!--[if lt IE 9]>
@@ -41,9 +41,9 @@ define('GRID_SIZE', 10);
           for ($i = 1; $i <= GRID_SIZE; $i++) {
             $td = array();
             for ($ii = 1; $ii <= GRID_SIZE; $ii++) {
-              $td[] = "<td class='grid-$i-$ii'></td>";
+              $td[] = "<td class='grid-$i-$ii cell' data-obj-path='game.grid.cell.$i.$ii'></td>";
             }
-            $tr[] = "<tr class='row-$i'>\n\t<th class='team-away'></th>\n\t" . implode("\n\t", $td) . '</tr>';
+            $tr[] = "<tr class='row-$i'>\n\t<th class='team-away' data-obj-path='game.grid.header.$i.0'></th>\n\t" . implode("\n\t", $td) . '</tr>';
           }
         ?>
       <table id="content">
@@ -54,7 +54,11 @@ define('GRID_SIZE', 10);
                 <table id="score-table">
                   <thead>
                     <tr>
-                      <?php echo str_repeat('<th class="team-home"></th>', (GRID_SIZE + 1)); ?>
+                      <?php
+                        for ($i = 0; $i <= GRID_SIZE; $i++) {
+                          echo "<th class='team-home' data-obj-path='game.grid.header.0.$i'></th>";
+                        }
+                      ?>
                     </tr>
                   </thead>
                   <tbody>

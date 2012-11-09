@@ -100,6 +100,11 @@ input[type=text] {
   text-align: center;
 }
 
+#score-table td:hover {
+  background: #ddd;
+  cursor: pointer;
+}
+
 #players-wrapper {
   width: 300px;
 }
@@ -116,8 +121,19 @@ input[type=text] {
   position: relative;
 }
 
+#player-list label {
+  display: inline-block;
+  width: 200px;
+  color: #888;
+}
+
 #player-list .selected {
+  color: #000;
   font-weight: bold;
+}
+
+#player-list .squares-used {
+  display: inline-block;
 }
 
 #player-list .remove-player {
@@ -149,7 +165,7 @@ input[type=text] {
 
 #quarters input {
   padding: 4px 2px;
-  width: 25px;
+  width: 30px;
   border: none;
   font-size: 1.5em;
   text-align: center;
