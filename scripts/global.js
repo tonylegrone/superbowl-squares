@@ -12,7 +12,7 @@
       playerHTML += '  <span class="uid">' + uid + '.</span>';
       playerHTML += '  <label><input type="radio" name="player" value="' + uid + '" />' + $name.val() + '</label>';
       playerHTML += '  <span class="squares-used">0</span>';
-      playerHTML += '  <a href="javascript:;" class="remove-player">remove</a>';
+      playerHTML += '  <a href="javascript:;" data-player-uid="' + uid + '" class="remove-player">remove</a>';
       playerHTML += '</li>';
 
       $nameList.append(playerHTML);
@@ -41,6 +41,16 @@
           $this.removeClass('highlight');
         }
       });
+    });
+
+    $('#player-list').on('click', '.remove-player', function(){
+      var $this = $(this);
+      var playerObj = gameWrapper.game.players[$this.attr('data-player-uid')];
+      var killPlayer = confirm('Are you sure you wanted to remove ' + playerObj.name + '?');
+
+      if (killPlayer) {
+        removePlayer(playerObj.uid);
+      }
     });
 
     $('td.cell').click(function(){
@@ -159,7 +169,7 @@
         playerHTML += '  <span class="uid">' + o.uid + '.</span>';
         playerHTML += '  <label><input type="radio" name="player" value="' + o.uid + '" />' + o.name + '</label>';
         playerHTML += '  <span class="squares-used">' + o.squaresUsed + '</span>';
-        playerHTML += '  <a href="javascript:;" class="remove-player">remove</a>';
+        playerHTML += '  <a href="javascript:;" data-player-uid="' + o.uid + '" class="remove-player">remove</a>';
         playerHTML += '</li>';
       }
 
@@ -167,11 +177,17 @@
     });
   }
 
-  function saveGames() {
-    gameWrapper.games[gameWrapper.activeGame] = gameWrapper.game;
-    localStorage.games = JSON.stringify(gameWrapper.games);
-    console.log(gameWrapper);
+  function removePlayer(uid) {
+    $('#player-uid-' + uid).remove();
+    $('td.cell:contains(' + uid + ')').text('');
+    gameWrapper.game.players.splice(uid, 1);
   }
+
+	function saveGames() {
+		gameWrapper.games[gameWrapper.activeGame] = gameWrapper.game;
+		localStorage.games = JSON.stringify(gameWrapper.games);
+		console.log(gameWrapper);
+	}
 
   if (!gameWrapper.games) {
     gameWrapper.games = [gameWrapper.default_game];
