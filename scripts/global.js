@@ -81,24 +81,24 @@
     });
 
 
-	// Games
-	var gameWrapper = {
-		game : null,
-		activeGame : localStorage.activeGame = localStorage.activeGame ? 0 : localStorage.activeGame,
-		games : localStorage.games ? $.parseJSON(localStorage.games) : false,
-		default_game : {
-			title : '',
-			unitPrice : 1.00,
-			teams : {},
-			scores : {},
-			players : {},
+  // Games
+  var gameWrapper = {
+    game : null,
+    activeGame : localStorage.activeGame = localStorage.activeGame ? 0 : localStorage.activeGame,
+    games : localStorage.games ? $.parseJSON(localStorage.games) : false,
+    default_game : {
+      title : '',
+      unitPrice : 1.00,
+      teams : {},
+      scores : {},
+      players : {},
       playerIndex : 0,
-			grid : {}
-		}
-	};
+      grid : {}
+    }
+  };
 
-	function loadGame(gameId) {
-		gameWrapper.game = gameWrapper.games[gameId];
+  function loadGame(gameId) {
+    gameWrapper.game = gameWrapper.games[gameId];
 
     $('input[data-obj-path]').each(function(){
       var $this = $(this);
@@ -121,29 +121,29 @@
       $this.val(obj);
     });
 
-		$('td[data-obj-path]').each(function(){
-			var $this = $(this);
-			var objPath = $this.attr('data-obj-path').split('.');
+    $('td[data-obj-path]').each(function(){
+      var $this = $(this);
+      var objPath = $this.attr('data-obj-path').split('.');
 
-			var obj = gameWrapper;
-			for(i in objPath) {
+      var obj = gameWrapper;
+      for(i in objPath) {
         if(obj == undefined) continue;
-				var o = obj[objPath[i]];
+        var o = obj[objPath[i]];
 
-				/*if (o == undefined){
-					obj[objPath[i]] = {};
-					o = obj[objPath[i]];
-				}*/
-				//if (i != objPath.length-1){
-					obj = o;
-				//}
-			}
+        /*if (o == undefined){
+          obj[objPath[i]] = {};
+          o = obj[objPath[i]];
+        }*/
+        //if (i != objPath.length-1){
+          obj = o;
+        //}
+      }
 
-			$this.text(obj);
-		});
+      $this.text(obj);
+    });
 
     loadPlayers();
-	}
+  }
 
   function loadPlayers() {
     $('#player-list').append(function(){
@@ -167,42 +167,42 @@
     });
   }
 
-	function saveGames() {
-		gameWrapper.games[gameWrapper.activeGame] = gameWrapper.game;
-		localStorage.games = JSON.stringify(gameWrapper.games);
-		console.log(gameWrapper);
-	}
+  function saveGames() {
+    gameWrapper.games[gameWrapper.activeGame] = gameWrapper.game;
+    localStorage.games = JSON.stringify(gameWrapper.games);
+    console.log(gameWrapper);
+  }
 
-	if (!gameWrapper.games) {
-		gameWrapper.games = [gameWrapper.default_game];
-		saveGames();
-	}
+  if (!gameWrapper.games) {
+    gameWrapper.games = [gameWrapper.default_game];
+    saveGames();
+  }
 
-	$('[data-obj-path]').on('change', function(evt){
-		var $this = $(this);
-		var objPath = $this.attr('data-obj-path').split('.');
+  $('[data-obj-path]').on('change', function(evt){
+    var $this = $(this);
+    var objPath = $this.attr('data-obj-path').split('.');
 
-		var obj = gameWrapper;
-		for(i in objPath) {
-			var o = obj[objPath[i]];
+    var obj = gameWrapper;
+    for(i in objPath) {
+      var o = obj[objPath[i]];
 
-			if (o == undefined){
-				obj[objPath[i]] = {};
-				o = obj[objPath[i]];
-			}
-			if (i != objPath.length-1){
-				obj = o;
-			}
-		}
+      if (o == undefined){
+        obj[objPath[i]] = {};
+        o = obj[objPath[i]];
+      }
+      if (i != objPath.length-1){
+        obj = o;
+      }
+    }
 
-		obj[objPath[i]] = $this.val();
+    obj[objPath[i]] = $this.val();
 
-		saveGames();
+    saveGames();
 
-		evt.preventDefault();
-	});
+    evt.preventDefault();
+  });
 
-	loadGame(gameWrapper.activeGame);
+  loadGame(gameWrapper.activeGame);
 
   });
 })(jQuery, window, document);

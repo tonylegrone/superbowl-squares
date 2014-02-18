@@ -17,7 +17,7 @@ define('GRID_SIZE', 10);
   <link rel="shortcut icon" href="/favicon.png" type="image/vnd.microsoft.icon" />
   <link rel="stylesheet" href="/libraries/jquery-ui-1.9.1/css/smoothness/jquery-ui-1.9.1.custom.css" />
   <link rel="stylesheet" href="/styles/global.css" type="text/css" />
- 
+
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
