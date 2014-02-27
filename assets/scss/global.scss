@@ -1,3 +1,14 @@
+/*  Stylesheet Info
+  =======================================================================
+
+    * Filename:       global.scss
+    * Description:    Global Master
+
+  ==================================================================== */
+
+
+// Base Styling
+// ----------------------------------------------------------------------
 
 body {
   margin: 0 auto;
@@ -40,24 +51,12 @@ td.cell.highlight {
   background: #afa;
 }
 
+
+// Page & Content Wrappers
+// ----------------------------------------------------------------------
+
 #page-wrapper {
   margin: 0 0 20px;
-}
-
-#teams input {
-  border: none;
-}
-
-#content {
-  width: 100%;
-}
-
-#content td {
-  vertical-align: top;
-}
-
-#content td.spacer {
-  width: 20px;
 }
 
 #quarters .quarter,
@@ -74,112 +73,146 @@ td.cell.highlight {
   padding: 20px;
 }
 
-#score-table-wrapper {
+#content {
+  width: 100%;
+
+  td {
+    vertical-align: top;
+
+    &.spacer {
+      width: 20px;
+    }
+  }
 }
 
+#teams input {
+  border: none;
+}
+
+
+
+// Score Table
+// ----------------------------------------------------------------------
 #score-table {
   width: 100%;
+
+  th {
+    padding: 4px;
+    width: 2em;
+    height: 2em;
+
+    &.team-home {
+      color: #55f;
+    }
+
+    &.team-away {
+      color: #f55;
+    }
+  }
+
+  td {
+    margin: 0;
+    padding: 4px;
+    width: 2em;
+    height: 2em;
+    border: 1px #aaa solid;
+    text-align: center;
+
+    &::hover {
+      background: #ddd;
+      cursor: pointer;
+    }
+  }
 }
 
-#score-table th.team-home {
-  color: #55f;
-}
 
-#score-table th.team-away {
-  color: #f55;
-}
 
-#score-table th {
-  padding: 4px;
-  width: 2em;
-  height: 2em;
-}
-
-#score-table td {
-  margin: 0;
-  padding: 4px;
-  width: 2em;
-  height: 2em;
-  border: 1px #aaa solid;
-  text-align: center;
-}
-
-#score-table td:hover {
-  background: #ddd;
-  cursor: pointer;
-}
+// Player Wrapper
+// ----------------------------------------------------------------------
 
 #players-wrapper {
   width: 300px;
+
+  ol {
+    padding: 0;
+    list-style: none;
+  }
 }
 
-#players-wrapper ol {
-  padding: 0;
-  list-style: none;
+
+
+// Player Lists
+// ----------------------------------------------------------------------
+
+#player-list {
+  .selected {
+    color: #000;
+    font-weight: bold;
+  }
+
+  .squares-used {
+    display: inline-block;
+  }
+
+  .remove-player {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: red;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  label {
+    display: inline-block;
+    width: 200px;
+    color: #888;
+  }
+
+  input[type=radio] {
+    display: none;
+  }
+
+  li {
+    position: relative;
+
+    &:hover .remove-player {
+      display: block;
+    }
+
+    .uid {
+      display: inline-block;
+      width: 20px;
+      text-align: right;
+    }
+  }
 }
 
-#player-list input[type=radio] {
-  display: none;
-}
 
-#player-list > li {
-  position: relative;
-}
 
-#player-list > li .uid {
-  display: inline-block;
-  width: 20px;
-  text-align: right;
-}
-
-#player-list label {
-  display: inline-block;
-  width: 200px;
-  color: #888;
-}
-
-#player-list .selected {
-  color: #000;
-  font-weight: bold;
-}
-
-#player-list .squares-used {
-  display: inline-block;
-}
-
-#player-list .remove-player {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: red;
-  text-align: center;
-  text-decoration: none;
-}
-
-#player-list > li:hover .remove-player {
-  display: block;
-}
+// Quarters
+// ----------------------------------------------------------------------
 
 #quarters {
   width: 100%;
-}
 
-#quarters .quarter {
-  padding: 20px;
-  text-align: center;
-}
+  .quarter {
+    padding: 20px;
+    text-align: center;
+  }
 
-#quarters .spacer {
-  width: 20px;
-}
+  .spacer {
+    width: 20px;
+  }
 
-#quarters input {
-  padding: 4px 2px;
-  width: 30px;
-  border: none;
-  font-size: 1.5em;
-  text-align: center;
+  input {
+    padding: 4px 2px;
+    width: 30px;
+    border: none;
+    font-size: 1.5em;
+    text-align: center;
+  }
 }
 
 #add-player {
