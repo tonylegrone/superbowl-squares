@@ -1,15 +1,11 @@
-/*  Stylesheet Info
-  =======================================================================
+/**
+ * @file
+ * Defines global styles.
+ */
 
-    * Filename:       global.scss
-    * Description:    Global Master
-
-  ==================================================================== */
-
-
-// Base Styling
-// ----------------------------------------------------------------------
-
+/**
+ * Base styling.
+ */
 body {
   margin: 0 auto;
   padding: 20px;
@@ -51,10 +47,9 @@ td.cell.highlight {
   background: #afa;
 }
 
-
-// Page & Content Wrappers
-// ----------------------------------------------------------------------
-
+/**
+ * Page & Content Wrappers
+ */
 #page-wrapper {
   margin: 0 0 20px;
 }
@@ -89,10 +84,9 @@ td.cell.highlight {
   border: none;
 }
 
-
-
-// Score Table
-// ----------------------------------------------------------------------
+/**
+ * Score Table
+ */
 #score-table {
   width: 100%;
 
@@ -125,11 +119,9 @@ td.cell.highlight {
   }
 }
 
-
-
-// Player Wrapper
-// ----------------------------------------------------------------------
-
+/**
+ * Player Wrapper
+ */
 #players-wrapper {
   width: 300px;
 
@@ -139,10 +131,9 @@ td.cell.highlight {
   }
 }
 
-
-
-// Player Lists
-// ----------------------------------------------------------------------
+/**
+ * Player Lists
+ */
 
 #player-list {
   .selected {
@@ -189,11 +180,9 @@ td.cell.highlight {
   }
 }
 
-
-
-// Quarters
-// ----------------------------------------------------------------------
-
+/**
+ * Quarters
+ */
 #quarters {
   width: 100%;
 
