@@ -1,4 +1,4 @@
-
+/* line 2, ../assets/scss/global.scss */
 body {
   margin: 0 auto;
   padding: 20px;
@@ -9,57 +9,70 @@ body {
   font-size: 0.9em;
 }
 
+/* line 12, ../assets/scss/global.scss */
 table {
   border-collapse: collapse;
 }
 
+/* line 16, ../assets/scss/global.scss */
 header {
   margin: 0 0 20px;
 }
 
+/* line 20, ../assets/scss/global.scss */
 h1 {
   margin: 0 0 10px;
 }
 
+/* line 24, ../assets/scss/global.scss */
 h2 {
   margin: 0 0 10px;
   font-size: 1em;
 }
 
+/* line 29, ../assets/scss/global.scss */
 header > h1 {
   text-align: center;
 }
 
+/* line 33, ../assets/scss/global.scss */
 input[type=text] {
   padding: 4px;
   border: 1px #aaa solid;
   border-radius: 4px;
 }
 
+/* line 39, ../assets/scss/global.scss */
 td.cell.highlight {
   background: #afa;
 }
 
+/* line 43, ../assets/scss/global.scss */
 #page-wrapper {
   margin: 0 0 20px;
 }
 
+/* line 47, ../assets/scss/global.scss */
 #teams input {
   border: none;
 }
 
+/* line 51, ../assets/scss/global.scss */
 #content {
   width: 100%;
 }
 
+/* line 55, ../assets/scss/global.scss */
 #content td {
   vertical-align: top;
 }
 
+/* line 59, ../assets/scss/global.scss */
 #content td.spacer {
   width: 20px;
 }
 
+/* line 65, ../assets/scss/global.scss */
 #quarters .quarter,
 #players-wrapper,
 #score-table-wrapper {
@@ -69,32 +82,35 @@ td.cell.highlight {
   vertical-align: top;
 }
 
+/* line 73, ../assets/scss/global.scss */
 #players-wrapper,
 #score-table-wrapper {
   padding: 20px;
 }
 
-#score-table-wrapper {
-}
-
+/* line 80, ../assets/scss/global.scss */
 #score-table {
   width: 100%;
 }
 
+/* line 84, ../assets/scss/global.scss */
 #score-table th.team-home {
   color: #55f;
 }
 
+/* line 88, ../assets/scss/global.scss */
 #score-table th.team-away {
   color: #f55;
 }
 
+/* line 92, ../assets/scss/global.scss */
 #score-table th {
   padding: 4px;
   width: 2em;
   height: 2em;
 }
 
+/* line 98, ../assets/scss/global.scss */
 #score-table td {
   margin: 0;
   padding: 4px;
@@ -104,49 +120,59 @@ td.cell.highlight {
   text-align: center;
 }
 
+/* line 107, ../assets/scss/global.scss */
 #score-table td:hover {
   background: #ddd;
   cursor: pointer;
 }
 
+/* line 112, ../assets/scss/global.scss */
 #players-wrapper {
   width: 300px;
 }
 
+/* line 116, ../assets/scss/global.scss */
 #players-wrapper ol {
   padding: 0;
   list-style: none;
 }
 
+/* line 121, ../assets/scss/global.scss */
 #player-list input[type=radio] {
   display: none;
 }
 
+/* line 125, ../assets/scss/global.scss */
 #player-list > li {
   position: relative;
 }
 
+/* line 129, ../assets/scss/global.scss */
 #player-list > li .uid {
   display: inline-block;
   width: 20px;
   text-align: right;
 }
 
+/* line 135, ../assets/scss/global.scss */
 #player-list label {
   display: inline-block;
   width: 200px;
   color: #888;
 }
 
+/* line 141, ../assets/scss/global.scss */
 #player-list .selected {
   color: #000;
   font-weight: bold;
 }
 
+/* line 146, ../assets/scss/global.scss */
 #player-list .squares-used {
   display: inline-block;
 }
 
+/* line 150, ../assets/scss/global.scss */
 #player-list .remove-player {
   display: none;
   position: absolute;
@@ -157,23 +183,28 @@ td.cell.highlight {
   text-decoration: none;
 }
 
+/* line 160, ../assets/scss/global.scss */
 #player-list > li:hover .remove-player {
   display: block;
 }
 
+/* line 164, ../assets/scss/global.scss */
 #quarters {
   width: 100%;
 }
 
+/* line 168, ../assets/scss/global.scss */
 #quarters .quarter {
   padding: 20px;
   text-align: center;
 }
 
+/* line 173, ../assets/scss/global.scss */
 #quarters .spacer {
   width: 20px;
 }
 
+/* line 177, ../assets/scss/global.scss */
 #quarters input {
   padding: 4px 2px;
   width: 30px;
@@ -182,14 +213,17 @@ td.cell.highlight {
   text-align: center;
 }
 
+/* line 185, ../assets/scss/global.scss */
 #add-player {
   margin: 0 0 15px;
 }
 
+/* line 189, ../assets/scss/global.scss */
 input.team-home {
   background: #bbf;
 }
 
+/* line 193, ../assets/scss/global.scss */
 input.team-away {
   background: #fbb;
 }
